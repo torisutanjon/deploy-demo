@@ -1,0 +1,16 @@
+version: v1.0
+name: Pipeline 3
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu2004
+blocks:
+  - name: Staging deployment
+    task:
+      jobs:
+        - name: Deploy to staging
+          commands:
+            - echo "deploying to staging ..."
+      prologue:
+        commands:
+          - checkout
