@@ -23,9 +23,19 @@ blocks:
         - name: Unit Tests
           commands:
             - echo "Unit testing ..."
+            - echo $SECRET_URL
         - name: Integration Tests
           commands:
             - echo "Integration testing"
+            - echo $API_KEY
+            - echo $SECRET_UID
+      env_vars:
+        - name: API_KEY
+          value: '123123'
+        - name: SECRET_URL
+          value: qweqwe
+        - name: SECRET_UID
+          value: asdasd
   - name: Linters
     task:
       prologue:
